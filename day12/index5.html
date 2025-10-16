@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2x2 Grid Layout</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+    margin: 0;
+    padding: 40px;
+  }
+
+  /* Grid container */
+  .grid-container {
+    display: grid;                      /* Enable CSS Grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    grid-template-rows: repeat(2, 200px);  /* 2 rows of fixed height */
+    gap: 20px;                          /* Space between boxes */
+  }
+
+  /* Each grid box */
+  .grid-item {
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;                      /* Center content inside */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Responsive layout — stack boxes on small screens */
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr;       /* Single column on mobile */
+      grid-template-rows: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>2×2 Grid Layout</h1>
+<div class="grid-container">
+  <div class="grid-item">Box 1</div>
+  <div class="grid-item">Box 2</div>
+  <div class="grid-item">Box 3</div>
+  <div class="grid-item">Box 4</div>
+</div>
+
+</body>
+</html>
+
+    
+</body>
+</html>

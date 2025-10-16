@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Float + Clearfix Example</title>
+<style>
+  /* Basic page styles */
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height: 1.6; padding: 2rem; }
+
+  /* The container that holds the floated image and text */
+  .media {
+    background: #f8f9fb;
+    border: 1px solid #e0e6ef;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: visible; /* don't rely on this to clear floats; use clearfix below */
+  }
+
+  /* clearfix — clears floated children */
+  .clearfix::after {
+    content: "";
+    display: table; /* or block */
+    clear: both;
+  }
+
+  /* The image (float left example) */
+  .media__img {
+    float: left;
+    width: 160px;           /* fixed width for the image block */
+    height: auto;
+    margin-right: 1rem;     /* gap between image and text */
+    margin-bottom: .5rem;   /* avoids overlap on very small heights */
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+
+  /* Optional: float to the right instead */
+  /* .media__img { float: right; margin-left: 1rem; margin-right: 0; } */
+
+  /* Text area */
+  .media__body { overflow: visible; } /* keep content flowing around floated image */
+
+  /* Make layout stack on smaller screens */
+  @media (max-width: 520px) {
+    .media__img {
+      float: none;
+      width: 100%;
+      margin: 0 0 1rem 0;
+      display: block;
+    }
+  }
+</style>
+</head>
+<body>
+
+<article class="media clearfix" aria-label="Article with floated image">
+  <img class="media__img" src="https://placekitten.com/320/240" alt="Cute kitten">
+  <div class="media__body">
+    <h2>Title next to a floated image</h2>
+    <p>
+      This paragraph flows beside the image because the image is floated. The clearfix applied
+      to the container (.clearfix) ensures the parent expands to contain the floated element,
+      preventing layout collapse (e.g., overlapping the next section).
+    </p>
+    <p>
+      On narrow screens the media__img stops floating and becomes full-width above the text
+      thanks to the media query — which is generally friendlier for mobile users.
+    </p>
+  </div>
+</article>
+
+</body>
+</html>
+
+    
+</body>
+</html>

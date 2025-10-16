@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3 Box Layout with Flexbox</title>
+<style>
+  /* Basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 40px;
+  }
+
+  /* Flex container */
+  .container {
+    display: flex;                /* Enable Flexbox */
+    justify-content: space-between; /* Space between boxes */
+    align-items: stretch;         /* Make boxes equal height */
+    gap: 20px;                    /* Space between boxes */
+    flex-wrap: wrap;              /* Wrap boxes on small screens */
+  }
+
+  /* Individual box */
+  .box {
+    flex: 1;                      /* Each box takes equal space */
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-width: 250px;             /* Prevent boxes from shrinking too small */
+  }
+
+  .box h2 {
+    margin-top: 0;
+    color: #007acc;
+  }
+
+  .box p {
+    color: #555;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;     /* Stack boxes vertically */
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>3-Box Flexbox Layout</h1>
+<div class="container">
+  <div class="box">
+    <h2>Box 1</h2>
+    <p>This is the first box. Flexbox makes it easy to align and space boxes evenly.</p>
+  </div>
+  <div class="box">
+    <h2>Box 2</h2>
+    <p>This is the second box. Each box automatically adjusts size for balance.</p>
+  </div>
+  <div class="box">
+    <h2>Box 3</h2>
+    <p>This is the third box. Resize the window to see the responsive effect.</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+    
+</body>
+</html>
