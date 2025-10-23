@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layout for Beginners</title>
+  <style>
+    /* Basic styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    /* Container uses Flexbox */
+    .container {
+      display: flex;
+      flex-direction: column; /* Stack items vertically by default */
+      gap: 10px; /* Space between boxes */
+    }
+
+    /* Each box */
+    .box {
+      background-color: lightblue;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    /* When the screen is at least 600px wide, switch to horizontal layout */
+    @media (min-width: 600px) {
+      .container {
+        flex-direction: row; /* Side by side */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Flexbox Layout with min-width</h1>
+
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+  <p style="text-align:center; margin-top:20px;">Resize the window to see the layout change!</p>
+</body>
+</html>
+    
+</body>
+</html>
