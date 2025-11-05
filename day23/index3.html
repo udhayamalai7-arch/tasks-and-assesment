@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add List Items Dynamically</title>
+</head>
+<body>
+  <h3>My Favorite Fruits </h3>
+  <ul id="fruitList"></ul>
+
+  <script>
+    
+    let list = document.querySelector("#fruitList");
+
+    
+    let fruits = ["Apple", "Banana", "Cherry"];
+
+    
+    fruits.forEach(fruit => {
+      let li = document.createElement("li");  
+      li.textContent = fruit;                
+      list.appendChild(li);                   
+    });
+  </script>
+</body>
+</html>
