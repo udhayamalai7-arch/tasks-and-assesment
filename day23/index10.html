@@ -1,0 +1,11 @@
+<button id="formatBtn">Insert Formatted Text</button>
+<p id="output"></p>
+
+<script>
+  let btn = document.querySelector("#formatBtn");
+  let output = document.querySelector("#output");
+
+  btn.addEventListener("click", () => {
+    output.innerHTML = "This is <b>bold</b> and <i>italic</i> text.";
+  });
+</script>

@@ -1,0 +1,17 @@
+<ul id="myList">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Cherry</li>
+</ul>
+
+<button id="removeBtn">Remove First Item</button>
+
+<script>
+  let list = document.querySelector("#myList");
+  let button = document.querySelector("#removeBtn");
+
+  button.addEventListener("click", () => {
+    let firstItem = list.firstElementChild;
+    if (firstItem) list.removeChild(firstItem);
+  });
+</script>

@@ -1,0 +1,11 @@
+<input type="text" id="nameInput" placeholder="Type something...">
+<p id="display"></p>
+
+<script>
+  let input = document.querySelector("#nameInput");
+  let display = document.querySelector("#display");
+
+  input.addEventListener("input", () => {
+    display.textContent = input.value;
+  });
+</script>

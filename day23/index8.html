@@ -1,0 +1,29 @@
+<input id="taskInput" placeholder="New task">
+<button id="addBtn">Add Task</button>
+<ul id="taskList"></ul>
+
+<script>
+  let input = document.querySelector("#taskInput");
+  let addBtn = document.querySelector("#addBtn");
+  let list = document.querySelector("#taskList");
+
+  addBtn.addEventListener("click", () => {
+    if (input.value.trim() === "") return;
+
+    let li = document.createElement("li");
+    li.textContent = input.value;
+
+    // Add remove button
+    let removeBtn = document.createElement("button");
+    removeBtn.textContent = "❌";
+    removeBtn.style.marginLeft = "10px";
+
+    removeBtn.addEventListener("click", () => {
+      list.removeChild(li);
+    });
+
+    li.appendChild(removeBtn);
+    list.appendChild(li);
+    input.value = "";
+  });
+</script>
