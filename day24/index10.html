@@ -1,0 +1,29 @@
+<form id="loginForm">
+    <input id="user" type="text" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+    <button type="submit">Login</button>
+</form>
+<p id="msg"></p>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    try {
+        let username = document.getElementById("user").value.trim();
+        let password = document.getElementById("pass").value.trim();
+
+        if (username === "" || password === "") {
+            throw new Error("All fields are required");
+        }
+
+        if (password.length < 5) {
+            throw new Error("Password must be at least 5 characters");
+        }
+
+        document.getElementById("msg").textContent = "Login Successful!";
+    } catch (err) {
+        document.getElementById("msg").textContent = err.message;
+    }
+});
+</script>

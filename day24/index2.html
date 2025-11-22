@@ -1,0 +1,8 @@
+<input type="text" id="username" placeholder="Type something">
+<p id="display"></p>
+
+<script>
+document.getElementById("username").addEventListener("input", (e) => {
+    document.getElementById("display").textContent = e.target.value;
+});
+</script>

@@ -1,0 +1,11 @@
+<form id="myform">
+    <input type="text" placeholder="Enter name">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("myform").addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("Form submitted without reload");
+});
+</script>

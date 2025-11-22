@@ -1,0 +1,12 @@
+<button id="colorBtn">Change Color</button>
+
+<script>
+document.getElementById("colorBtn").addEventListener("click", () => {
+    try {
+        let box = document.getElementById("myBox"); // element not found
+        box.style.background = "blue";
+    } catch (err) {
+        console.log("Caught error:", err.message);
+    }
+});
+</script>

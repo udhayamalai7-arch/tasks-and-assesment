@@ -1,0 +1,23 @@
+<form id="validateForm">
+    <input id="email" type="text" placeholder="Enter email">
+    <button type="submit">Submit</button>
+</form>
+<p id="error"></p>
+
+<script>
+document.getElementById("validateForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    try {
+        let email = document.getElementById("email").value;
+
+        if (!email.includes("@")) {
+            throw new Error("Invalid Email Format");
+        }
+
+        document.getElementById("error").textContent = "Valid Email!";
+    } catch (err) {
+        document.getElementById("error").textContent = err.message;
+    }
+});
+</script>

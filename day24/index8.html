@@ -1,0 +1,21 @@
+<input id="num1" type="number" placeholder="Number 1">
+<input id="num2" type="number" placeholder="Number 2">
+<button onclick="safeDivide()">Divide</button>
+<p id="result"></p>
+
+<script>
+function safeDivide() {
+    try {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+
+        if (b === 0) {
+            throw new Error("Division by zero not allowed");
+        }
+
+        document.getElementById("result").textContent = a / b;
+    } catch (err) {
+        document.getElementById("result").textContent = err.message;
+    }
+}
+</script>
