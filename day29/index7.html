@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="gallery" src="https://via.placeholder.com/200" width="200">
+    <br><br>
+    <button class="changeImg" data-photo="https://via.placeholder.com/200/ff0000">Red</button>
+    <button class="changeImg" data-photo="https://via.placeholder.com/200/00ff00">Green</button>
+    <button class="changeImg" data-photo="https://via.placeholder.com/200/0000ff">Blue</button>
+    
+    <script>
+        $(".changeImg").click(function () {
+            let newImg = $(this).data("photo");
+            $("#gallery").fadeOut(function () {
+                $("#gallery").attr("src", newImg).fadeIn();
+            });
+        });
+    </script>
+
+</body>
+</html>

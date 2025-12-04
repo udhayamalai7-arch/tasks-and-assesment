@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <input id="name" placeholder="Enter Name">
+    <input id="course" placeholder="Enter Course">
+    <button onclick="saveData()">Save</button>
+
+    <p id="display"></p>
+
+    <script>
+        function saveData() {
+            localStorage.setItem("name", document.getElementById("name").value);
+            localStorage.setItem("course", document.getElementById("course").value);
+            showData();
+        }
+
+        function showData() {
+            const n = localStorage.getItem("name");
+            const c = localStorage.getItem("course");
+            document.getElementById("display").innerHTML =
+                `Name: ${n} | Course: ${c}`;
+        }
+
+        showData(); // Runs on reload
+    </script>
+
+</body>
+
+</html>

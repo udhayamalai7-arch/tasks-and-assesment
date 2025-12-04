@@ -1,0 +1,14 @@
+<script>
+    async function getGitHubData() {
+        try {
+            let response = await fetch("https://api.github.com/users/octocat");
+            if (!response.ok) throw new Error("User not found!");
+
+            let data = await response.json();
+            console.log(data.login, data.public_repos);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+    getGitHubData();
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitHub Followers with Error Handling</title>
+</head>
+
+<body>
+
+    <h3>Enter GitHub Username:</h3>
+    <input type="text" id="username" placeholder="e.g. octocat">
+    <button onclick="getFollowers()">Get Followers</button>
+
+    <p id="error" style="color:red;"></p>
+    <ul id="followersList"></ul>
+
+    <script>
+        async function getFollowers() {
+
+            const user = document.getElementById("username").value;
+            const error = document.getElementById("error");
+            const list = document.getElementById("followersList");
+
+            // Reset messages and list
+            error.textContent = "";
+            list.innerHTML = "";
+
+            if (!user) {
+                error.textContent =

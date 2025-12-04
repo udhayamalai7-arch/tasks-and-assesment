@@ -1,0 +1,23 @@
+<button onclick="getLocation()">Get Location</button>
+<button onclick="saveLocation()">Save Location</button>
+
+<p id="loc"></p>
+
+<script>
+    let coords = {};
+
+    function getLocation() {
+        navigator.geolocation.getCurrentPosition(pos => {
+            coords.lat = pos.coords.latitude;
+            coords.long = pos.coords.longitude;
+
+            document.getElementById("loc").innerHTML =
+                `Lat: ${coords.lat} <br> Long: ${coords.long}`;
+        });
+    }
+
+    function saveLocation() {
+        localStorage.setItem("userLocation", JSON.stringify(coords));
+        alert("Location Saved!");
+    }
+</script>

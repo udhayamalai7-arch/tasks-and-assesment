@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Tasks</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <p id="text">This is a paragraph to Hide & Show using jQuery.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+    <script>
+        $("#hide").click(function () {
+            $("#text").hide();
+        });
+
+        $("#show").click(function () {
+            $("#text").show();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitHub Followers Viewer</title>
+    <style>
+        .userCard {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        img {
+            width: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>GitHub Followers Finder</h2>
+
+    <input type="text" id="username" placeholder="Enter GitHub Username">
+    <button onclick="getFollowers()">Fetch Followers</button>
+    <p id="loading" style="display:none;">⏳ Loading...</p>
+    <p id="error" style="color:red;"></p>
+    <div id="followers"></div>
+
+    <script>
+        async function getFollowers() {
+            const user = document.getElementById("username").value;
+            const url = `https://api.github.com/users/${user}/followers`;
+
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("error").innerHTML = "";
+            document.getElementById("followers").innerHTML = "";
+
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error("User not found!");
+
+                const data = await res.json();
+
+                if (data.length === 0) {
+                    document.getElementById("error").innerHTML = "No followers found!";
+                    return;
+                }
+
+                data.forEach(follower => {
+                    document.getElementById("followers").innerHTML += `
+              <div class="userCard">
+                <img src="${follower.avatar_url}">
+                <a href="${follower.html_url}" target="_blank">${follower.login}</a>
+              </div>
+            `;
+                });
+
+            } catch (err) {
+                document.getElementById("error").textContent = err.message;
+            } finally {
+                document.getElementById("loading").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

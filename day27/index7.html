@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitHub Followers</title>
+</head>
+
+<body>
+
+    <h3>Enter GitHub Username:</h3>
+    <input type="text" id="username" placeholder="e.g. octocat">
+    <button onclick="getFollowers()">Get Followers</button>
+
+    <ul id="followersList"></ul>
+
+    <script>
+        async function getFollowers() {
+            const user = document.getElementById("username").value;
+            const url = `https://api.github.com/users/${user}/followers`;
+
+            const response = await fetch(url);
+            const d

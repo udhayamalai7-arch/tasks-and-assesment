@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="info"></p>
+
+<script>
+fetch("https://api.github.com/users/octocat")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("info").innerHTML =
+      `User: ${data.login} | Public Repos: ${data.public_repos}`;
+  });
+</script>
+
+</body>
+</html>

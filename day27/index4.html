@@ -1,0 +1,9 @@
+<script>
+    fetch("https://api.github.com/users/thisUserDoesNotExist123")
+            .then(res => {
+                if (!res.ok) throw new Error("Invalid user!");
+                return res.json();
+            })
+            .catch(err => console.log(err.message));
+
+</script>
