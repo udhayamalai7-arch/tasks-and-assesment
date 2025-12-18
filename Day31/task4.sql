@@ -1,0 +1,1 @@
+alter table department change column phone  user varchar(100);
